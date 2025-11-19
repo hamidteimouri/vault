@@ -23,9 +23,7 @@ services:
       - VAULT_ADDR=http://vault:8200
       - MY_VAULT_TOKEN=${MY_VAULT_TOKEN:-test}
     volumes:
-      #- ./vault-root-token:/vault/file/vault-root-token
       - ./vault-init.sh:/usr/local/bin/vault-init.sh
-      #- vault-data:/vault/file/
       - ./vault-data:/vault/file/
     command: /usr/local/bin/vault-init.sh
     #restart: on-failure
